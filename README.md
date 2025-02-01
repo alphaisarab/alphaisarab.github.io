@@ -6,7 +6,7 @@ Our project is *open-source* and *will be open-source.* We don't know who you ar
 
 # License
 
-See more about the MIT License at LICENSE.md, or [view it here.](https://github.com/alphaisarab/alphaisarab.github.io/blob/main/LICENSE)
+See more about the MIT License at `LICENSE.md`, or [view it here.](https://github.com/alphaisarab/alphaisarab.github.io/blob/main/LICENSE)
 
 # Credits
 
