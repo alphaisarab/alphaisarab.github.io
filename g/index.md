@@ -4,6 +4,6 @@
 
 layout: home
 page: home
-permalink: /home/
+permalink: /index.md/
 ---
 hello
