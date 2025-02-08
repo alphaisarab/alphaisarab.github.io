@@ -129,11 +129,11 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
         overflow: hidden;
-        max-height: 2.5rem;
+        max-height: 3.5rem;
       }
 
       .theme-toggle:hover {
-        max-height: 8rem;
+        max-height: 11rem;
         transform: translateY(-5px);
       }
 
@@ -154,12 +154,21 @@
         color: #ffffff;
         cursor: pointer;
         transition: all 0.3s ease;
-        width: 2rem;
-        height: 2rem;
+        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        gap: 0.5rem;
         border-radius: 0.25rem;
+      }
+
+      .theme-toggle button i {
+        width: 1rem;
+        text-align: center;
+      }
+
+      .theme-toggle button span {
+        font-size: 0.875rem;
+        opacity: 0.8;
       }
 
       [data-bs-theme="light"] .theme-toggle button {
@@ -184,9 +193,9 @@
         </div>
         <div class="nav-container">
           <ul class="nav nav-pills mb-0">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Games</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"">About</a></li>
           </ul>
         </div>
         <div class="search-bar">
@@ -195,50 +204,27 @@
       </header>
     </div>
 
-    <!-- Main content area -->
+    <!-- main content area -->
     <div class="container flex-grow-1">
       <div class="main-title">
         <h1 class="display-4"><strong>alphaisarab</strong></h1>
         <p class="lead"><em>your gaming haven</em></p>
       </div>
 
-      <!-- Feature Cards -->
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <i class="bi bi-controller feature-icon"></i>
-            <h3>Unblocked Games</h3>
-            <p>Access and play all your favorite games without any restrictions or limitations. No ads, sketchy trackers, or anything suspicious in general to while playing. </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <i class="bi bi-lightning-charge feature-icon"></i>
-            <h3>Fast Loading</h3>
-            <p>Experience instant gaming with our optimized platform and quick loading times. It runs fullscreen so you don't deal with any other links distracting you.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <i class="bi bi-collection feature-icon"></i>
-            <h3>Huge Collection</h3>
-            <p>Discover a vast library of games spanning every genre you can imagine. Many games such as Slope, 1v1.lol, and Subway Surfers is avaliable here!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Theme Toggle -->
+    <!-- theme toggle -->
     <div class="theme-toggle">
       <div class="theme-toggle-buttons">
         <button onclick="setTheme('light')" title="Light mode" data-theme="light">
           <i class="bi bi-sun-fill"></i>
+          <span>Light</span>
         </button>
         <button onclick="setTheme('dark')" title="Dark mode" data-theme="dark">
           <i class="bi bi-moon-fill"></i>
+          <span>Dark</span>
         </button>
         <button onclick="setTheme('auto')" title="System theme" data-theme="auto">
           <i class="bi bi-circle-half"></i>
+          <span>System</span>
         </button>
       </div>
     </div>
