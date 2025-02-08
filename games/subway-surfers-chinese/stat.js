@@ -86,12 +86,8 @@
             /* console.log(document.referrer);
              console.log(ref);*/
 
-            if (ref[1] == 'startgamer.ru' || ref[1] == 'startgamer.net') {
-                console.log("ok domain");
-            } else {
-                console.log("not ok domain: " + url);
-                sendData(url + ' | ' + window.location.href);
-                window.location = 'https://games3.startgamer.ru/includes/sitelock/?url=' + window.location.href;
+         console.log("Bypassing domain check");
+                // window.location = 'https://games3.startgamer.ru/includes/sitelock/?url=' + window.location.href;
             }
         }
 
@@ -99,7 +95,7 @@
         console.log("not iframe: " + window.location.href);
         sendData(window.location.href);
         //window.location = 'https://startgamer.ru';
-        window.location = 'https://games3.startgamer.ru/includes/sitelock/redirect.php?url=' + window.location.href;
+        // window.location = 'https://games3.startgamer.ru/includes/sitelock/redirect.php?url=' + window.location.href;
     }
 
 })();
