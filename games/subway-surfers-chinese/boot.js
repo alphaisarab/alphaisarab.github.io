@@ -1,9 +1,12 @@
 /* eslint-disable func-names */
 /* eslint-disable no-var */
 /** Load script file */
-function loadScript(path, onComplete)
-{
+function loadScript(path, onComplete) {
     var script = document.createElement('script');
+
+    if (!path.startsWith("http")) {
+        path = "./" + path;  // Ensure correct relative path
+    }
 
     if (onComplete) script.onload = onComplete;
     script.src = path;
