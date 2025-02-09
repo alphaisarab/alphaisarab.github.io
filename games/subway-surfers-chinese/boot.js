@@ -48,7 +48,7 @@ function initApp()
     }
 
     loadScript('./dependencies.bundle.js');
-    loadScript(window.MAIN ? window.MAIN : './js/index.js');
+    loadScript(window.MAIN ? window.MAIN : './index.js');
 }
 
 /** Prevent arrows and space from scrolling browser */
