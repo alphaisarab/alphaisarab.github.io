@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 93%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 16%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 16%;
+    --input: 240 3.7% 16%;
+    --ring: 240 4.9% 83.9%;
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 240 5% 84.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 16%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-soft rounded-2xl dark:bg-gray-900/40 dark:border-white/5;
+  }
+  
+  .container-padding {
+    @apply px-6 md:px-10 lg:px-24 max-w-7xl mx-auto;
+  }
+  
+  .link-item {
+    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-300 dark:text-foreground/70 dark:hover:text-foreground;
+  }
+  
+  .link-item::after {
+    content: "";
+    @apply absolute bottom-[-2px] left-0 w-0 h-[2px] bg-blue transition-all duration-300 ease-in-out;
+  }
+  
+  .link-item:hover::after {
+    @apply w-full;
+  }
+  
+  .button-primary {
+    @apply bg-blue text-white rounded-full px-6 py-2.5 hover:shadow-[0_8px_30px_rgb(0,145,255,0.3)] transition-all duration-300 ease-in-out;
+  }
+  
+  .button-secondary {
+    @apply bg-blue-light text-blue rounded-full px-6 py-2.5 hover:bg-blue-light/80 transition-all duration-300 dark:bg-blue/10 dark:text-blue/90;
+  }
+  
+  .feature-card {
+    @apply glass p-8 transform transition-all duration-400 hover:shadow-hover hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue to-blue-dark bg-clip-text text-transparent dark:from-blue/80 dark:to-blue;
+  }
+  
+  .autumn-font {
+    font-family: 'Autumn Brush', cursive;
+  }
+  
+  /* Game card styles */
+  .game-card {
+    @apply overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 dark:border-gray-800;
+  }
+  
+  .game-card-image {
+    @apply aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden;
+  }
+  
+  .game-card-content {
+    @apply p-4;
+  }
+  
+  /* Animations */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
