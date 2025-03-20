@@ -1,0 +1,10 @@
+
+@font-face {
+  font-family: 'Autumn Brush';
+  src: url('./autumn-brush.woff2') format('woff2'),
+       url('./autumn-brush.woff') format('woff'),
+       url('./autumn-brush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
