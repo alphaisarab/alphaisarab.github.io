@@ -40,3 +40,5 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "
 .modal-inner{width:100%;max-width:900px;background:linear-gradient(180deg,#071226,#061224);border-radius:14px;padding:18px}
 .modal-close{float:right;background:transparent;border:0;color:var(--muted);font-size:14px}
 @media (max-width:600px){.controls input[type=search]{min-width:120px}.card .cover{height:100px}}
+#modal.hidden { display: none !important; }
+
