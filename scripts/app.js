@@ -41,3 +41,48 @@
     })
   })
 })()
+// Live search and game loader
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("game-grid")
+  const search = document.getElementById("search")
+
+  let games = []
+
+  // Load games.json
+  fetch("data/games.json")
+    .then(res => res.json())
+    .then(data => {
+      games = data
+      renderGames(games)
+    })
+    .catch(err => console.error("Failed to load games:", err))
+
+  function renderGames(list){
+    if(!grid) return
+    grid.innerHTML = ""
+    if(list.length === 0){
+      grid.innerHTML = "<p>No games found</p>"
+      return
+    }
+    list.forEach(game => {
+      const card = document.createElement("a")
+      card.href = game.url
+      card.className = "card"
+      card.innerHTML = `
+        <img src="${game.cover}" alt="${game.title}" class="card-cover">
+        <h3 class="card-title">${game.title}</h3>
+      `
+      grid.appendChild(card)
+    })
+  }
+
+  // Live filter
+  if(search){
+    search.addEventListener("input", e => {
+      const query = e.target.value.toLowerCase()
+      const filtered = games.filter(g => g.title.toLowerCase().includes(query))
+      renderGames(filtered)
+    })
+  }
+})
+
