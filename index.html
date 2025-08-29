@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>67 GAMES</title>
+<meta name="description" content="Unblocked web games, fast and clean.">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header class="topbar">
+<div class="container">
+<a class="logo" href="/">67 GAMES</a>
+<div class="controls">
+<input id="search" type="search" placeholder="Search games">
+<button id="filter-toggle" aria-expanded="false">Filters</button>
+</div>
+</div>
+</header>
+
+
+<main>
+<section class="hero">
+<div class="container">
+<h1>Play unblocked games</h1>
+<p>Fast loading. Mobile friendly. No trackers.</p>
+</div>
+</section>
+
+
+<section class="filters panel hidden" id="filters">
+<div class="container">
+<label>Tags</label>
+<div id="tag-list" class="tag-list"></div>
+</div>
+</section>
+
+
+<section class="grid container" id="game-grid" aria-live="polite">
+<!-- Game cards injected by scripts/app.js -->
+</section>
+</main>
+
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+<div class="modal-inner">
+<button id="modal-close" class="modal-close" aria-label="Close">X</button>
+<div id="modal-content"></div>
+</div>
+</div>
+
+
+<footer class="site-footer">
+<div class="container">
+<small>Hosted on GitHub Pages</small>
+</div>
+</footer>
+
+
+<script src="data/games.json" type="application/json" id="games-json"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
