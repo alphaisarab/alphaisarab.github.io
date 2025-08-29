@@ -62,6 +62,25 @@ filterToggle.setAttribute('aria-expanded', String(open));
 
 
 // init
-loadGames();
+let games = [];
+let activeTags = new Set();
+
+async function loadGames() {
+  try {
+    const res = await fetch("data/games.json");
+    if (!res.ok) throw new Error("Failed to fetch games.json");
+    games = await res.json();
+  } catch (e) {
+    console.error("Error loading games.json", e);
+    games = [];
+  }
+}
+
+(async () => {
+  await loadGames();
+  renderTags();
+  renderGrid();
+})();
+
 renderTags();
 renderGrid();
