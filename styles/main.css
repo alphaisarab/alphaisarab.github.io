@@ -1,3 +1,23 @@
+:root{
+--bg: #071226;
+--text: #e6eef8;
+--card: #061224;
+--muted: #94a3b8;
+--accent: #10b981;
+}
+html[data-theme="light"], :root {
+--bg: #f8fafc;
+--text: #0f1720;
+--card: #ffffff;
+--muted: #6b7280;
+--accent: #0ea5e9;
+}
+body{
+background: var(--bg);
+color: var(--text);
+transition: background 0.24s ease, color 0.24s ease;
+}
+
 /* Theme */
 :root {
   --bg: #0f1720;
