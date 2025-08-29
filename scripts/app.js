@@ -1,3 +1,63 @@
+(function(){
+function ready(fn){
+if(document.readyState !== 'loading') fn()
+else document.addEventListener('DOMContentLoaded', fn)
+}
+
+function applyTheme(mode){
+if(mode === 'system'){
+document.documentElement.removeAttribute('data-theme')
+document.documentElement.setAttribute('data-user-theme', 'system')
+return
+}
+document.documentElement.setAttribute('data-theme', mode)
+document.documentElement.setAttribute('data-user-theme', mode)
+}
+
+function getStored(){
+return localStorage.getItem('theme') || 'system'
+}
+
+function cycle(mode){
+return mode === 'dark' ? 'light' : mode === 'light' ? 'system' : 'dark'
+}
+
+function updateButton(el, mode){
+if(!el) return
+el.dataset.theme = mode
+el.textContent = mode === 'dark' ? '🌙' : mode === 'light' ? '☀️' : '🖥️'
+el.setAttribute('aria-pressed', String(mode !== 'system'))
+el.title = 'Theme: ' + mode
+}
+
+ready(function(){
+var btn = document.getElementById('theme-toggle')
+var current = getStored()
+applyTheme(current)
+updateButton(btn, current)
+
+if(btn){
+  btn.addEventListener('click', function(){
+    current = cycle(current)
+    applyTheme(current)
+    updateButton(btn, current)
+    localStorage.setItem('theme', current)
+  })
+}
+
+var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
+if(mq){
+  var onPrefChange = function(){
+    if(localStorage.getItem('theme') === 'system') applyTheme('system')
+  }
+  if(mq.addEventListener) mq.addEventListener('change', onPrefChange)
+  else if(mq.addListener) mq.addListener(onPrefChange)
+}
+
+
+})
+})()
+
 const themeToggle = document.getElementById("theme-toggle");
 
 function setTheme(mode) {
