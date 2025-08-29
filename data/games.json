@@ -1,0 +1,26 @@
+[
+{
+"id": "slope",
+"title": "Slope",
+"url": "https://example.com/embed/slope/index.html",
+"cover": "assets/covers/slope.jpg",
+"tags": ["arcade","runner"],
+"description": "Fast downhill arcade game in your browser."
+},
+{
+"id": "pacman",
+"title": "Classic Maze",
+"url": "https://example.com/embed/pacman/index.html",
+"cover": "assets/covers/pacman.jpg",
+"tags": ["classic","maze"],
+"description": "Retro style maze game."
+},
+{
+"id": "platformer",
+"title": "Pixel Jumper",
+"url": "https://example.com/embed/platformer/index.html",
+"cover": "assets/covers/platformer.jpg",
+"tags": ["platform","pixel"],
+"description": "Simple pixel platformer."
+}
+]
