@@ -1,3 +1,77 @@
+/* Theme */
+:root {
+  --bg: #0f1720;
+  --text: #e6eef8;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --accent: #10b981;
+}
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --text: #111827;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+.logo-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+#theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* BlazerGames-style cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-4px); }
+.card .cover {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+.card .meta {
+  padding: 12px;
+}
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.card p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
 :root{
 --bg:#0f1720;
 --card:#0b1220;
