@@ -84,3 +84,32 @@ async function loadGames() {
 
 renderTags();
 renderGrid();
+
+// Theme toggle
+const themeToggle = document.getElementById("theme-toggle");
+
+function setTheme(mode) {
+  if (mode === "system") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", mode);
+  }
+  localStorage.setItem("theme", mode);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("theme") || "system";
+  setTheme(saved);
+}
+
+themeToggle.addEventListener("click", () => {
+  const current = localStorage.getItem("theme") || "system";
+  const next = current === "dark" ? "light" : current === "light" ? "system" : "dark";
+  setTheme(next);
+  alert("Theme set to " + next); // Replace with nicer UI later
+});
+
+initTheme();
+
+// Live search already works via input listener
+searchEl.addEventListener("input", () => renderGrid());
