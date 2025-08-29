@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Player</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    #game-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+    }
+    iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="game-title">Game</h1>
+    <button id="fullscreen-btn">Fullscreen</button>
+  </header>
+  <div id="game-container">
+    <iframe id="game-frame" src=""></iframe>
+  </div>
+  <script>
+    // Get URL params
+    const params = new URLSearchParams(window.location.search)
+    const game = params.get("g")
+    const title = params.get("t")
+
+    // Set title and iframe
+    document.getElementById("game-title").textContent = title || "Game"
+    document.getElementById("game-frame").src = game || ""
+
+    // Fullscreen toggle
+    document.getElementById("fullscreen-btn").addEventListener("click", () => {
+      const iframe = document.getElementById("game-frame")
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen()
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen()
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen()
+      }
+    })
+  </script>
+</body>
+</html>
