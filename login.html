@@ -94,13 +94,13 @@
       return data.valid && Date.now() < data.expiry;
     }
 
-    function redirect() {
-      const box = document.getElementById("login-box");
-      box.classList.add("fade-out");
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 600); // match fade-out time
-    }
+  function redirect() {
+   const box = document.getElementById("login-box");
+   box.classList.add("fade-out");
+   setTimeout(() => {
+    window.location.href = "/";
+  }, 600);
+}
 
     document.getElementById("login-btn").addEventListener("click", () => {
       const input = document.getElementById("password").value.trim();
