@@ -4,23 +4,23 @@
 "title": "Slope",
 "url": "https://example.com/embed/slope/index.html",
 "cover": "assets/covers/slope.jpg",
-"tags": ["arcade","runner"],
-"description": "Fast downhill arcade game in your browser."
+"tags": ["slope","ball"],
+"description": "Original slope in your browser."
 },
 {
-"id": "pacman",
-"title": "Classic Maze",
+"id": "eaglercraft",
+"title": "Eaglercraft",
 "url": "https://example.com/embed/pacman/index.html",
-"cover": "assets/covers/pacman.jpg",
-"tags": ["classic","maze"],
-"description": "Retro style maze game."
+"cover": "assets/covers/minecraft.jpg",
+"tags": ["minecraft","eaglercraft","craft"],
+"description": "Minecraft but in your browser. Version 1.8."
 },
 {
-"id": "platformer",
-"title": "Pixel Jumper",
+"id": "subway-surfers",
+"title": "Subway Surfers - Year of the Snake",
 "url": "https://example.com/embed/platformer/index.html",
-"cover": "assets/covers/platformer.jpg",
-"tags": ["platform","pixel"],
-"description": "Simple pixel platformer."
+"cover": "assets/covers/subway-surfers-year-of-the-snake.png",
+"tags": ["subway","surfers"],
+"description": "idk what to put here"
 }
 ]
