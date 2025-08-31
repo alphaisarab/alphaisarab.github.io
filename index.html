@@ -14,6 +14,21 @@
       <img src="assets/icons/logo.png" alt="67 Games logo" class="logo-img">
       <span>67 GAMES</span>
     </a>
+<script>
+  function checkSession() {
+    const session = localStorage.getItem("sessionKey");
+    if (!session) {
+      window.location.href = "login.html";
+      return;
+    }
+    const data = JSON.parse(session);
+    if (!data.valid || Date.now() > data.expiry) {
+      localStorage.removeItem("sessionKey");
+      window.location.href = "login.html";
+    }
+  }
+  checkSession();
+</script>
 
     <div class="controls">
       <button id="logout-btn">Logout</button>
