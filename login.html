@@ -76,36 +76,42 @@
   </div>
 
   <!-- CryptoJS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script>
-    const correctHash = "bd74a85218f84e493b08c8d3a3c9d11a"; // MD5 of "Bapplesauce"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+  // Correct MD5 hash of "Bapplesauce"
+  const correctHash = "bd74a85218f84e493b08c8d3a3c9d11a";
 
-    function setSession() {
-      const data = {
-        valid: true,
-        expiry: Date.now() + 24 * 60 * 60 * 1000 // 24 hours
-      };
-      localStorage.setItem("sessionKey", JSON.stringify(data));
-    }
+  function setSession() {
+    const data = {
+      valid: true,
+      expiry: Date.now() + 24 * 60 * 60 * 1000 // 24 hours
+    };
+    localStorage.setItem("sessionKey", JSON.stringify(data));
+  }
 
-    function checkPassword() {
-      const input = document.getElementById("password").value.trim();
-      const hash = CryptoJS.MD5(input).toString();
-      if (hash === correctHash) {
-        setSession();
-        redirect();
-      } else {
-        document.getElementById("error-msg").style.display = "block";
-      }
-    }
+  function checkPassword() {
+    const input = document.getElementById("password").value.trim();
+    const hash = CryptoJS.MD5(input).toString();
 
-    function redirect() {
-      const box = document.getElementById("login-box");
-      box.classList.add("fade-out");
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 600);
+    console.log("Input:", input);
+    console.log("Hash:", hash);
+    console.log("Expected:", correctHash);
+
+    if (hash === correctHash) {
+      setSession();
+      redirect();
+    } else {
+      document.getElementById("error-msg").style.display = "block";
     }
-  </script>
+  }
+
+  function redirect() {
+    const box = document.getElementById("login-box");
+    box.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 600);
+  }
+</script>
 </body>
 </html>
