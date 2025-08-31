@@ -86,3 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+document.getElementById("logout-btn").addEventListener("click", () => {
+  localStorage.removeItem("sessionKey");
+  window.location.href = "login.html";
+});
+
