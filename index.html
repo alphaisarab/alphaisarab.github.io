@@ -15,19 +15,12 @@
       <span>67 GAMES</span>
     </a>
 <script>
-  function checkSession() {
-    const session = localStorage.getItem("sessionKey");
-    if (!session) {
-      window.location.href = "login.html";
-      return;
-    }
-    const data = JSON.parse(session);
-    if (!data.valid || Date.now() > data.expiry) {
-      localStorage.removeItem("sessionKey");
-      window.location.href = "login.html";
-    }
+  const session = JSON.parse(localStorage.getItem("sessionKey") || "{}");
+  if (!session.valid || Date.now() > session.expiry) {
+    // session missing or expired
+    localStorage.removeItem("sessionKey");
+    window.location.href = "/login.html";
   }
-  checkSession();
 </script>
 
     <div class="controls">
