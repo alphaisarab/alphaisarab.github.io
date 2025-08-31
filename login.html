@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>67 GAMES - Secure Login</title>
+  <title>67 Games - Secure Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -39,6 +39,12 @@
       transform: scale(0.95);
     }
 
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 1rem;
+    }
+
     h1 {
       margin-bottom: 0.5rem;
       font-size: 1.8rem;
@@ -51,14 +57,18 @@
       color: #aaa;
     }
 
-    input[type="password"] {
+    input[type="password"],
+    button {
       width: 100%;
       padding: 0.7rem;
       border-radius: 10px;
       border: none;
-      margin-bottom: 1rem;
       font-size: 1rem;
       outline: none;
+      margin-bottom: 1rem;
+    }
+
+    input[type="password"] {
       background: #2a2e38;
       color: #fff;
       transition: box-shadow 0.3s ease;
@@ -71,14 +81,9 @@
     button {
       background: #3a7bfd;
       color: #fff;
-      border: none;
-      padding: 0.7rem 1.4rem;
-      border-radius: 10px;
-      font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
-      width: 100%;
     }
 
     button:hover {
@@ -89,13 +94,14 @@
     .error {
       display: none;
       color: #ff5a5a;
-      margin-top: 0.8rem;
+      margin-top: -0.5rem;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <div id="login-box" class="login-box">
+    <img src="assets/icons/logo.png" alt="67 Games Logo" class="logo">
     <h1>67 Games</h1>
     <p>Please enter the access password</p>
     <input id="password" type="password" placeholder="Password">
