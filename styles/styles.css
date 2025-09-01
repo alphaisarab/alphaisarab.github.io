@@ -1,0 +1,21 @@
+.page-content {
+  margin-top: 80px; /* Push below fixed navbar */
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.page-content h2 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: #3a7bfd;
+}
