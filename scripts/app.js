@@ -91,3 +91,29 @@ document.getElementById("logout-btn").addEventListener("click", () => {
   window.location.href = "login.html";
 });
 
+async function loadGames() {
+  const response = await fetch("games.json");
+  const games = await response.json();
+
+  const grid = document.getElementById("gamesGrid");
+  grid.innerHTML = "";
+
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+
+    const imageSrc = game.image && game.image.trim() !== "" 
+      ? game.image 
+      : "https://via.placeholder.com/300x200?text=No+Image"; // fallback image
+
+    card.innerHTML = `
+      <a href="${game.link}">
+        <img src="${imageSrc}" alt="${game.title}">
+        <div class="game-title">${game.title}</div>
+      </a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+loadGames();
